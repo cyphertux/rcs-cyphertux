@@ -34,6 +34,8 @@
   min-height: 0;
   overflow-x: hidden;
   overflow-y: auto;
+  overscroll-behavior: contain;
+  touch-action: pan-y;
   display: flex;
   flex-direction: column;
   gap: 0.4em;
@@ -160,9 +162,9 @@ a.rowLink:focus-visible {
   display: flex;
   flex-direction: column;
   gap: 0.15em;
-  flex: 1;
-  min-height: 0;
-  overflow: hidden;
+  /* Natural height so LcdPanel.body can scroll (was flex:1 + overflow:hidden → clipped) */
+  flex: 0 0 auto;
+  overflow: visible;
 }
 
 .item {
