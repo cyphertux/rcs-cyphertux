@@ -170,6 +170,14 @@ export const messages = {
     "about.keys": "JAMAIS ICI",
     "about.source": "GITHUB · RCS-CYPHERTUX",
 
+    "desktopOnly.title": "ACCES",
+    "desktopOnly.meta": "BLOQUE",
+    "desktopOnly.banner": "TERMINAL DESKTOP UNIQUEMENT",
+    "desktopOnly.l1": "RCS EXIGE L'EXTENSION UNISAT.",
+    "desktopOnly.l2": "PAS DE WALLET SUR NAVIGATEUR MOBILE.",
+    "desktopOnly.l3": "OUVRE CE SITE SUR ORDINATEUR.",
+    "desktopOnly.hint": "CHANNEL 07 · SERVICE RCS",
+
     // Link
     "link.title": "CONNEXION",
     "link.metaOn": "LIEE",
@@ -595,6 +603,14 @@ export const messages = {
     "about.sign": "UNISAT PSBT",
     "about.keys": "NEVER HERE",
     "about.source": "GITHUB · RCS-CYPHERTUX",
+
+    "desktopOnly.title": "ACCESS",
+    "desktopOnly.meta": "LOCKED",
+    "desktopOnly.banner": "DESKTOP TERMINAL ONLY",
+    "desktopOnly.l1": "RCS REQUIRES THE UNISAT EXTENSION.",
+    "desktopOnly.l2": "NO WALLET IN MOBILE BROWSERS.",
+    "desktopOnly.l3": "OPEN THIS SITE ON A COMPUTER.",
+    "desktopOnly.hint": "CHANNEL 07 · RCS SERVICE",
 
     "link.title": "LINK",
     "link.metaOn": "ON",

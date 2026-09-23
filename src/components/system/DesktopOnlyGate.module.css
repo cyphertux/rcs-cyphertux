@@ -1,0 +1,88 @@
+.screen {
+  position: relative;
+  width: 100vw;
+  height: 100dvh;
+  max-height: 100dvh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 1.25rem;
+  background: #e89a3c;
+  color: #2c1408;
+  font-family: var(--font-vt323), "Courier New", monospace;
+  font-size: clamp(1.05rem, 4.2vw, 1.45rem);
+  line-height: 1.15;
+}
+
+.panel {
+  width: min(28rem, 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 0.55em;
+  border: 3px solid #2c1408;
+  background: #e89a3c;
+  padding: 0.75em 0.85em 0.65em;
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.75em;
+  padding-bottom: 0.25em;
+  border-bottom: 2px solid #2c1408;
+  letter-spacing: 0.08em;
+}
+
+.title {
+  letter-spacing: 0.14em;
+}
+
+.meta {
+  color: #8b4a1a;
+  font-size: 0.9em;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+
+.banner {
+  margin: 0;
+  text-align: center;
+  letter-spacing: 0.1em;
+  color: #e89a3c;
+  background: #2c1408;
+  padding: 0.35em 0.4em;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35em;
+  padding: 0.15em 0;
+}
+
+.line {
+  margin: 0;
+  letter-spacing: 0.04em;
+  color: #2c1408;
+}
+
+.url {
+  margin: 0.25em 0 0;
+  text-align: center;
+  letter-spacing: 0.12em;
+  color: #8b4a1a;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.hint {
+  margin: 0;
+  padding-top: 0.35em;
+  border-top: 2px solid #8b4a1a;
+  color: #8b4a1a;
+  font-size: 0.85em;
+  letter-spacing: 0.08em;
+}

@@ -4,6 +4,10 @@ import { useEffect, useSyncExternalStore } from "react";
 import { BitcoinProviderRoot, useBitcoin } from "@/bitcoin/BitcoinContext";
 import { BootSequence } from "@/components/screens/BootSequence";
 import { InstrumentFrame } from "@/components/instrument/InstrumentFrame";
+import {
+  DesktopOnlyGate,
+  useIsMobileBlocked,
+} from "@/components/system/DesktopOnlyGate";
 import { useMachineStore } from "@/state/machineStore";
 import { WalletProviderRoot } from "@/wallet/WalletContext";
 import type { MemoryEntry } from "@/domain/memory";
@@ -161,9 +165,14 @@ function Runtime() {
 
 export function SystemShell() {
   const isClient = useIsClient();
+  const blocked = useIsMobileBlocked();
 
   if (!isClient) {
     return <div className={styles.shell} />;
+  }
+
+  if (blocked) {
+    return <DesktopOnlyGate />;
   }
 
   return (
