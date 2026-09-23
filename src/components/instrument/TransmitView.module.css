@@ -1,0 +1,67 @@
+/* Transmit extras inside LcdPanel */
+
+.presets {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6em;
+  font-size: 0.95em;
+  letter-spacing: 0.12em;
+}
+
+.preset {
+  color: #8b4a1a;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
+}
+
+.presetActive {
+  color: #2c1408;
+  border-bottom: 1px solid #2c1408;
+  padding-bottom: 2px;
+}
+
+.stages {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.stage {
+  font-size: 0.85em;
+  letter-spacing: 0.28em;
+  color: #8b4a1a;
+  opacity: 0.5;
+}
+
+.stageActive {
+  color: #2c1408;
+  opacity: 1;
+}
+
+.stageDone {
+  opacity: 0.75;
+  color: #2c1408;
+}
+
+.arrow {
+  color: #8b4a1a;
+  font-size: 0.9em;
+  opacity: 0.6;
+}
+
+.costLine {
+  margin: 0;
+  color: #2c1408;
+  letter-spacing: 0.06em;
+  font-size: 0.95em;
+}
+
+.dimLine {
+  margin: 0;
+  color: #8b4a1a;
+  letter-spacing: 0.04em;
+  font-size: 0.85em;
+  opacity: 0.85;
+}

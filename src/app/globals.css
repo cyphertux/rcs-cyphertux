@@ -1,0 +1,57 @@
+@import "../styles/tokens.css";
+
+html {
+  height: 100%;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  overscroll-behavior: none;
+}
+
+body {
+  min-height: 100%;
+  height: 100%;
+  margin: 0;
+  color: var(--phosphor);
+  background: var(--void);
+  font-family: var(--font-system);
+  font-size: var(--text);
+  line-height: 1.3;
+  -webkit-font-smoothing: none;
+  overflow: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: var(--phosphor);
+  color: var(--void);
+}
+
+/* LCD: no visible scrollbars (wheel / trackpad / touch still scroll) */
+* {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--phosphor);
+  outline-offset: 2px;
+}
+
+button,
+input {
+  font: inherit;
+  color: inherit;
+}

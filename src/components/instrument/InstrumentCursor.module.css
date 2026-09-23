@@ -1,0 +1,105 @@
+.cursor {
+  display: inline-block;
+  width: 0.6ch;
+  height: 1.05em;
+  flex-shrink: 0;
+  background: var(--phosphor);
+}
+
+.idle {
+  animation: blink var(--cursor-blink) step-end infinite;
+}
+
+.processing {
+  width: 1ch;
+  background: transparent;
+  border: 1px solid var(--phosphor);
+  animation: spinBox 0.7s steps(4) infinite;
+}
+
+.transmitting {
+  width: 1.2ch;
+  background: var(--phosphor-bright);
+  animation: txPulse 0.35s ease-in-out infinite;
+}
+
+.receiving {
+  width: 0.9ch;
+  background: var(--phosphor);
+  animation: recv 0.5s steps(2) infinite;
+}
+
+.error {
+  width: 0.8ch;
+  background: var(--signal-red);
+  animation: errFlash 0.25s step-end infinite;
+}
+
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  50.01%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes spinBox {
+  0% {
+    border-color: var(--phosphor);
+    border-top-color: transparent;
+  }
+  25% {
+    border-color: var(--phosphor);
+    border-right-color: transparent;
+  }
+  50% {
+    border-color: var(--phosphor);
+    border-bottom-color: transparent;
+  }
+  75% {
+    border-color: var(--phosphor);
+    border-left-color: transparent;
+  }
+}
+
+@keyframes txPulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scaleY(0.6);
+  }
+}
+
+@keyframes recv {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+}
+
+@keyframes errFlash {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  50.01%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor {
+    animation: none !important;
+    opacity: 1;
+  }
+}

@@ -1,0 +1,22 @@
+.shell {
+  min-height: 100dvh;
+  background: var(--void);
+  color: var(--phosphor);
+  position: relative;
+}
+
+.main {
+  position: relative;
+  z-index: 1;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+.bootWait {
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  color: var(--phosphor-dim);
+  letter-spacing: 0.4em;
+}

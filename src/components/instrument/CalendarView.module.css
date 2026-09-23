@@ -1,0 +1,54 @@
+/* Grid only — chrome lives in LcdPanel */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 4px;
+  overflow: hidden;
+  flex: 1;
+  min-height: 0;
+  align-content: start;
+}
+
+.cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 4px 1px;
+  font-size: 0.85em;
+  letter-spacing: 0.06em;
+  color: #8b4a1a;
+  border-bottom: 1px dotted #8b4a1a;
+}
+
+.cellActive {
+  color: #2c1408;
+}
+
+.cellToday {
+  outline: 1px solid #2c1408;
+}
+
+.cellToday .day {
+  color: #2c1408;
+}
+
+.cellLocked {
+  opacity: 0.4;
+}
+
+.day {
+  letter-spacing: 0.1em;
+}
+
+.mark {
+  font-size: 0.8em;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}

@@ -1,0 +1,46 @@
+:root {
+  /* RCS amber LCD */
+  --void: #e89a3c;
+  --phosphor: #2c1408;
+  --phosphor-bright: #2c1408;
+  --phosphor-dim: #8b4a1a;
+  --phosphor-ghost: #c87828;
+  --phosphor-line: #8b4a1a;
+  --signal-red: #2c1408;
+  --signal-green: #8b4a1a;
+  --scanline: 0;
+
+  --font-system: var(--font-vt323), "Courier New", monospace;
+
+  --text-micro: 0.7rem;
+  --text-sm: 0.95rem;
+  --text: 1.15rem;
+  --text-md: 1.4rem;
+  --text-lg: 2rem;
+  --text-xl: 3.5rem;
+  --text-giant: clamp(4rem, 12vw, 7.5rem);
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 40px;
+  --space-7: 64px;
+  --space-8: 96px;
+
+  --line-hair: 1px;
+  --zone-gap: clamp(12px, 2vw, 28px);
+
+  --cursor-blink: 1.1s;
+  --pulse-slow: 3.2s;
+  --drift: 8s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --cursor-blink: 0s;
+    --pulse-slow: 0s;
+    --drift: 0s;
+  }
+}

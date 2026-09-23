@@ -1,0 +1,144 @@
+.frame {
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  min-height: 100dvh;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: var(--space-4) clamp(12px, 3vw, 32px) var(--space-4);
+  gap: var(--space-3);
+}
+
+.top {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--zone-gap);
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--phosphor-ghost);
+}
+
+.meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  font-size: var(--text-micro);
+  letter-spacing: 0.22em;
+  color: var(--phosphor-dim);
+}
+
+.metaMain {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+  flex: 1;
+  min-width: 12rem;
+}
+
+.metaDown {
+  color: var(--signal-red);
+}
+
+.metaWarn {
+  color: var(--phosphor);
+}
+
+.zone {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.zoneLabel {
+  font-size: var(--text-micro);
+  letter-spacing: 0.28em;
+  color: var(--phosphor-dim);
+}
+
+.zoneValue,
+.zoneValueMono {
+  font-size: var(--text-sm);
+  letter-spacing: 0.12em;
+  color: var(--phosphor);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.zoneValueMono {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.18em;
+}
+
+.signalBar {
+  display: block;
+  padding: var(--space-2) 0;
+  border-top: 1px solid var(--phosphor-ghost);
+  border-bottom: 1px solid var(--phosphor-ghost);
+}
+
+.frame[data-health="OFFLINE"] {
+  --phosphor: color-mix(in srgb, var(--phosphor-bright) 35%, #3a2018);
+  --phosphor-bright: #c05040;
+  --phosphor-dim: color-mix(in srgb, #c05040 55%, #2a1810);
+  --phosphor-ghost: color-mix(in srgb, #c05040 25%, transparent);
+  --phosphor-line: color-mix(in srgb, #c05040 40%, transparent);
+}
+
+.frame[data-health="OFFLINE"] .top {
+  border-bottom-color: color-mix(in srgb, var(--signal-red) 45%, transparent);
+}
+
+.frame[data-health="OFFLINE"] .signalBar {
+  border-color: color-mix(in srgb, var(--signal-red) 40%, transparent);
+}
+
+.frame[data-health="DEGRADED"] .signalBar {
+  border-color: var(--phosphor-line);
+}
+
+.stage {
+  min-height: 0;
+  overflow: auto;
+  position: relative;
+}
+
+.bottom {
+  padding-top: var(--space-2);
+}
+
+.archiveFallback {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: var(--space-3);
+}
+
+.hint {
+  margin: 0;
+  font-size: var(--text-micro);
+  letter-spacing: 0.2em;
+  color: var(--phosphor-dim);
+}
+
+.frame[data-mode="network"] .signalBar {
+  border-color: var(--phosphor-line);
+}
+
+.frame[data-mode="transmit"] .top {
+  border-bottom-color: var(--phosphor-line);
+}
+
+@media (max-width: 640px) {
+  .top {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: var(--space-3);
+  }
+
+  .frame {
+    padding: var(--space-3) var(--space-3) var(--space-3);
+  }
+}

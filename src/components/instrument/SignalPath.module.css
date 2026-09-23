@@ -1,0 +1,274 @@
+.path {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  width: min(520px, 96%);
+  margin: 0 auto;
+}
+
+.phase {
+  font-size: var(--text-micro);
+  letter-spacing: 0.32em;
+  color: var(--phosphor-dim);
+}
+
+.hops {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 0;
+}
+
+.hopGroup {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+}
+
+.hopGroup:last-child {
+  flex: 0 0 auto;
+}
+
+.node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+  opacity: 0.35;
+  color: var(--phosphor-dim);
+  transition: opacity 0.35s ease, color 0.35s ease;
+}
+
+.nodeLit {
+  opacity: 0.85;
+  color: var(--phosphor);
+}
+
+.nodeActive {
+  opacity: 1;
+  color: var(--phosphor-bright);
+}
+
+.nodeSettled {
+  color: var(--signal-green);
+  opacity: 1;
+}
+
+.glyph {
+  font-size: var(--text-md);
+  line-height: 1;
+}
+
+.hopLabel {
+  font-size: 9px;
+  letter-spacing: 0.2em;
+}
+
+.segment {
+  position: relative;
+  flex: 1;
+  height: 2px;
+  margin: 0 4px;
+  margin-bottom: 14px;
+  background: var(--phosphor-ghost);
+  overflow: visible;
+  min-width: 12px;
+}
+
+.beam {
+  position: absolute;
+  inset: 0;
+  background: var(--phosphor-dim);
+  transform-origin: left center;
+  transform: scaleX(0);
+}
+
+.segmentFilled .beam {
+  transform: scaleX(1);
+  background: var(--phosphor);
+}
+
+.packet {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 5px;
+  height: 5px;
+  margin-top: -2.5px;
+  background: var(--phosphor-bright);
+  opacity: 0;
+  border-radius: 0;
+}
+
+.meta {
+  display: flex;
+  gap: var(--space-4);
+  font-size: 9px;
+  letter-spacing: 0.28em;
+  color: var(--phosphor-dim);
+}
+
+/* —— stages —— */
+
+.signal .segmentLive .beam {
+  animation: beamGrow 0.85s ease-out forwards;
+}
+
+.signal .segmentLive .packet {
+  animation: packetTravel 1.1s ease-in-out infinite;
+}
+
+.broadcast .segmentFilled .beam {
+  background: var(--phosphor);
+}
+
+.broadcast .segmentLive .beam {
+  transform: scaleX(1);
+  animation: beamPulse 0.7s ease-in-out infinite;
+}
+
+.broadcast .segmentLive .packet,
+.broadcast .segmentFilled .packet {
+  animation: packetTravel 0.95s linear infinite;
+}
+
+.confirmed .segmentFilled .beam {
+  transform: scaleX(1);
+  background: var(--signal-green);
+  opacity: 0.65;
+}
+
+.confirmed .packet {
+  opacity: 0 !important;
+  animation: none !important;
+}
+
+/* —— intensity —— */
+
+.i1 .beam {
+  height: 2px;
+}
+
+.i2 .segment {
+  height: 3px;
+}
+
+.i2 .beam {
+  box-shadow: 0 0 6px color-mix(in srgb, var(--phosphor) 40%, transparent);
+}
+
+.i3 .segment {
+  height: 3px;
+}
+
+.i3 .beam {
+  box-shadow: 0 0 10px color-mix(in srgb, var(--phosphor) 55%, transparent);
+}
+
+.i3 .packet {
+  width: 6px;
+  height: 6px;
+  margin-top: -3px;
+}
+
+.i4 .segment {
+  height: 4px;
+}
+
+.i4 .beam {
+  box-shadow: 0 0 14px color-mix(in srgb, var(--phosphor-bright) 60%, transparent);
+}
+
+.i4 .packet {
+  width: 7px;
+  height: 7px;
+  margin-top: -3.5px;
+}
+
+.i4 .nodeActive .glyph {
+  animation: nodeFlash 0.55s ease-in-out infinite;
+}
+
+/* —— reduced motion —— */
+
+.static .beam,
+.static .packet {
+  animation: none !important;
+}
+
+.static .segmentFilled .beam,
+.static .segmentLive .beam {
+  transform: scaleX(1);
+}
+
+.static .segmentLive .packet {
+  opacity: 1;
+  left: 50%;
+}
+
+@keyframes beamGrow {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes packetTravel {
+  0% {
+    opacity: 0;
+    left: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  88% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    left: calc(100% - 6px);
+  }
+}
+
+@keyframes beamPulse {
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes nodeFlash {
+  0%,
+  100% {
+    opacity: 0.75;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .beam,
+  .packet,
+  .nodeActive .glyph {
+    animation: none !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .hopLabel {
+    display: none;
+  }
+
+  .phase {
+    letter-spacing: 0.2em;
+  }
+}

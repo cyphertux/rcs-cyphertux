@@ -1,0 +1,151 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  padding: var(--space-4) 0;
+  gap: var(--space-3);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-3);
+}
+
+.title {
+  font-size: var(--text-sm);
+  letter-spacing: 0.3em;
+  color: var(--phosphor-bright);
+}
+
+.meta {
+  font-size: var(--text-micro);
+  letter-spacing: 0.2em;
+  color: var(--phosphor-dim);
+}
+
+.rule {
+  height: 1px;
+  background: var(--phosphor-line);
+  opacity: 0.6;
+}
+
+.lead {
+  margin: 0;
+  font-size: var(--text-micro);
+  letter-spacing: 0.16em;
+  color: var(--phosphor);
+}
+
+.menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.menuItem {
+  display: grid;
+  grid-template-columns: 2ch 1fr auto;
+  gap: var(--space-3);
+  align-items: baseline;
+  padding: 6px 0;
+  border-bottom: 1px dotted var(--phosphor-ghost);
+  font-size: var(--text-sm);
+}
+
+.num {
+  letter-spacing: 0.1em;
+  color: var(--phosphor-bright);
+}
+
+.menuTitle {
+  letter-spacing: 0.22em;
+  color: var(--phosphor);
+}
+
+.menuAction {
+  font-size: var(--text-micro);
+  letter-spacing: 0.16em;
+  color: var(--phosphor-dim);
+}
+
+.status {
+  max-width: 360px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: var(--text-micro);
+  letter-spacing: 0.14em;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+  color: var(--phosphor-dim);
+  border-bottom: 1px dotted var(--phosphor-ghost);
+  padding-bottom: 2px;
+}
+
+.row span:last-child {
+  color: var(--phosphor);
+  text-align: right;
+}
+
+.detailHead {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+}
+
+.detailTitle {
+  font-size: var(--text-md);
+  letter-spacing: 0.28em;
+  color: var(--phosphor-bright);
+}
+
+.term {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: var(--space-2) 0;
+  font-size: var(--text-sm);
+  letter-spacing: 0.06em;
+}
+
+.termLine {
+  display: grid;
+  grid-template-columns: 1.2em 1fr;
+  gap: var(--space-2);
+  color: var(--phosphor);
+  line-height: 1.4;
+}
+
+.prompt {
+  color: var(--phosphor-dim);
+}
+
+.bright {
+  color: var(--phosphor-bright);
+  word-break: break-all;
+}
+
+.hint {
+  margin: 0;
+  margin-top: auto;
+  font-size: var(--text-micro);
+  letter-spacing: 0.22em;
+  color: var(--phosphor-dim);
+}

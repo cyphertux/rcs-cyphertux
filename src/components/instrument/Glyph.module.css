@@ -1,0 +1,46 @@
+.glyph {
+  display: inline-block;
+  line-height: 1;
+  color: var(--phosphor);
+  font-family: var(--font-system);
+}
+
+.sm {
+  font-size: var(--text-sm);
+}
+
+.md {
+  font-size: var(--text-md);
+}
+
+.lg {
+  font-size: var(--text-xl);
+}
+
+.xl {
+  font-size: var(--text-giant);
+}
+
+.dim {
+  color: var(--phosphor-dim);
+}
+
+.pulse {
+  animation: glyphPulse var(--pulse-slow) ease-in-out infinite;
+}
+
+@keyframes glyphPulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pulse {
+    animation: none;
+  }
+}

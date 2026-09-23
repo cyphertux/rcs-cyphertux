@@ -1,0 +1,94 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  padding: var(--space-4) 0;
+  gap: var(--space-3);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.title {
+  font-size: var(--text-sm);
+  letter-spacing: 0.3em;
+  color: var(--phosphor-bright);
+}
+
+.meta {
+  font-size: var(--text-micro);
+  letter-spacing: 0.2em;
+  color: var(--phosphor-dim);
+}
+
+.rule {
+  height: 1px;
+  background: var(--phosphor-line);
+  opacity: 0.6;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-5) 0;
+}
+
+.glyph {
+  font-size: clamp(2rem, 6vw, 3rem);
+  color: var(--phosphor-bright);
+}
+
+.state {
+  margin: 0;
+  font-size: var(--text-sm);
+  letter-spacing: 0.28em;
+  color: var(--phosphor);
+}
+
+.grid {
+  max-width: 400px;
+  width: 100%;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: var(--text-micro);
+  letter-spacing: 0.14em;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+  color: var(--phosphor-dim);
+  border-bottom: 1px dotted var(--phosphor-ghost);
+  padding-bottom: 2px;
+}
+
+.row span:last-child {
+  color: var(--phosphor);
+  text-align: right;
+  word-break: break-all;
+  max-width: 70%;
+}
+
+.err {
+  margin: 0;
+  text-align: center;
+  font-size: var(--text-micro);
+  letter-spacing: 0.14em;
+  color: var(--signal-red, #c44);
+}
+
+.hint {
+  margin: auto 0 0;
+  font-size: var(--text-micro);
+  letter-spacing: 0.22em;
+  color: var(--phosphor-dim);
+}

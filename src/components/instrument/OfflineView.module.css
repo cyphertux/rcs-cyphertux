@@ -1,0 +1,65 @@
+.banner {
+  margin: 0;
+  flex-shrink: 0;
+  text-align: center;
+  letter-spacing: 0.08em;
+  color: #e89a3c;
+  background: #2c1408;
+  padding: 0.15em 0.35em;
+  animation: offlineBlink 1.1s step-end infinite;
+}
+
+.sub {
+  margin: 0;
+  flex-shrink: 0;
+  color: #8b4a1a;
+  letter-spacing: 0.04em;
+  font-size: 0.9em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.actions {
+  margin-top: auto;
+  flex-shrink: 0;
+  padding-top: 0.25em;
+}
+
+.action {
+  appearance: none;
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0.3em 0.45em;
+  border: 2px solid #2c1408;
+  background: #2c1408;
+  color: #e89a3c;
+  font: inherit;
+  letter-spacing: 0.12em;
+  text-align: left;
+  cursor: pointer;
+}
+
+.action:disabled {
+  opacity: 0.55;
+  cursor: wait;
+}
+
+.action:hover:not(:disabled),
+.action:focus-visible {
+  outline: 1px solid #2c1408;
+  outline-offset: 2px;
+}
+
+@keyframes offlineBlink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .banner {
+    animation: none;
+  }
+}

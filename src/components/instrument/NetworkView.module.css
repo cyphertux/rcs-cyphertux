@@ -1,0 +1,98 @@
+.network {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  min-height: 0;
+  gap: var(--space-3);
+  padding: var(--space-4) 0;
+}
+
+.header {
+  align-self: stretch;
+  display: flex;
+  gap: var(--space-2);
+  font-size: var(--text-micro);
+  letter-spacing: 0.28em;
+  color: var(--phosphor-dim);
+}
+
+.sep {
+  opacity: 0.4;
+}
+
+.value {
+  color: var(--phosphor);
+}
+
+.valueDown {
+  color: var(--signal-red);
+}
+
+.blockGiant {
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  letter-spacing: 0.08em;
+  color: var(--phosphor-bright);
+  line-height: 1;
+  margin: var(--space-2) 0;
+}
+
+.blockDown {
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  letter-spacing: 0.08em;
+  color: var(--signal-red);
+  opacity: 0.55;
+  line-height: 1;
+  margin: var(--space-2) 0;
+}
+
+.telemetry {
+  align-self: stretch;
+  max-width: 280px;
+  margin: var(--space-3) auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: var(--text-micro);
+  letter-spacing: 0.18em;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-4);
+  color: var(--phosphor-dim);
+  border-bottom: 1px dotted var(--phosphor-ghost);
+  padding-bottom: 2px;
+}
+
+.row span:last-child {
+  color: var(--phosphor);
+  font-variant-numeric: tabular-nums;
+}
+
+.stable {
+  color: var(--signal-green) !important;
+}
+
+.down {
+  color: var(--signal-red) !important;
+}
+
+.warn {
+  color: var(--phosphor-bright) !important;
+}
+
+.banner {
+  margin-top: var(--space-4);
+  font-size: var(--text-sm);
+  letter-spacing: 0.3em;
+  color: var(--signal-green);
+}
+
+.bannerDown {
+  margin-top: var(--space-4);
+  font-size: var(--text-sm);
+  letter-spacing: 0.3em;
+  color: var(--signal-red);
+}
